@@ -1,13 +1,13 @@
+# python - backend (flask vs fastapi vs sanic vs django) | laravel
+https://www.techempower.com/benchmarks/#section=data-r21
+
+###############################################
+
 https://www.python.org/downloads/
-
-https://nodejs.org/en
-
 https://www.jetbrains.com/ru-ru/pycharm/download/?section=windows
-
 
 https://git-scm.com/downloads
 https://desktop.github.com/
-
 
 https://app.diagrams.net/
 
@@ -15,17 +15,6 @@ https://app.diagrams.net/
 
 
 ###################################################
-
-# python - backend (flask vs fastapi vs sanic vs django) | laravel
-https://www.techempower.com/benchmarks/#section=data-r21
-
-
-# javascript - frontend (react vs vue)
-
-
-
-npx create-react-app frontend --template redux-typescript
-npm install prettier axios react-router-dom react-player bootstrap @mui/base
 
 
 
@@ -41,12 +30,7 @@ pip3 install "fastapi[all]" black[d] pylint
 
 
 
-
 tabnine
 pylint
-black connect
-prettier
-
-
 
 

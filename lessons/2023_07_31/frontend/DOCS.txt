@@ -1,0 +1,23 @@
+# javascript - frontend (react vs vue)
+##################################################
+
+
+https://nodejs.org/en
+https://www.jetbrains.com/ru-ru/pycharm/download/?section=windows
+
+###################################################
+
+npx create-react-app frontend --template redux-typescript
+npm install prettier axios react-router-dom react-player bootstrap @mui/base @mui/material @mui/icons-material @emotion/react @emotion/styled
+
+#################################################
+
+# PLUGINS
+prettier
+
+##################################################
+
+https://tailwindcss.com/docs/guides/create-react-app
+
+npm install -D tailwindcss
+npx tailwindcss init

@@ -1,18 +1,20 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
-import {Counter1, Counter2} from './components/counter';
-import './index.css';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
-const container = document.getElementById('root')!;
+//
+import Router from "./components/router";
+
+//
+import "./index.css";
+import "./css/bootstrap/bootstrap.css";
+
+const container = document.getElementById("root")!;
 const root = createRoot(container);
 
 root.render(
-  // <React.StrictMode>
-    <Provider store={store}>
-      {/*<Counter1 counter={888} />*/}
-      <Counter2 />
-    </Provider>
-  // </React.StrictMode>
+  <Provider store={store}>
+    <Router />
+  </Provider>,
 );
