@@ -33,4 +33,8 @@ pip3 install "fastapi[all]" black[d] pylint
 tabnine
 pylint
 
+# telegram bot
+# ui - pyqt6
+# opencv
+# back
 

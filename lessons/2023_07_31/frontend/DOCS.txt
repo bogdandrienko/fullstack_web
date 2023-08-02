@@ -21,3 +21,18 @@ https://tailwindcss.com/docs/guides/create-react-app
 
 npm install -D tailwindcss
 npx tailwindcss init
+
+
+
+#################################################
+
+
+# loader (axios - redux - load|error|data|fail)
+
+# пагинация
+# unlimited scroll - observer
+
+# websocket
+# queue (RabbitMQ)
+
+# ГОТОВОЕ НЕБОЛЬШОЕ, НО КОМПЛЕКСНОЕ SPA
