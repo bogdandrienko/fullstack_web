@@ -105,7 +105,7 @@ class Ui(QtWidgets.QWidget):
             # response.content  # butes
             # response.json()  # dict
             print(type(response), response)
-            with open("static/data.json", "w") as file:
+            with open("../static/data.json", "w") as file:
                 json.dump(response.json(), file)
 
         # native - not SPA

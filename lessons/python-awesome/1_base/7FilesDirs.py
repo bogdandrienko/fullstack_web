@@ -116,10 +116,10 @@ except Exception as error:
     print(error)
 finally:
     try:
-        os.rmdir('temp')  # удаление пустой папки
+        os.rmdir('../temp')  # удаление пустой папки
     except Exception as error:
         print(error)
-        shutil.rmtree('temp')  # удаление не пустой папки
+        shutil.rmtree('../temp')  # удаление не пустой папки
 
 os.mkdir("data")  # make directory
 

@@ -3,7 +3,7 @@ import psycopg2
 
 
 def example1():
-    with sqlite3.connect('database/example.db') as _connection:
+    with sqlite3.connect('../database/example.db') as _connection:
         _cursor = _connection.cursor()
         name = "o"  # ";drop table postgres;"
 
