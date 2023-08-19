@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML</title>
+</head>
+<body>
+<h1>HTML file</h1>
+{{ name }}
+{{ params.age }} {{ params.name }}
+
+{% if is_active %}
+    Активен
+{% else %}
+    Не активен
+{% endif %}
+
+<ul>
+    {% for user in list_users %}
+        <li>#{{ user.id }} | {{ user.username }}</li>
+    {% else %}
+        <li>Данных нет!</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

@@ -5,23 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17face7b-e4db-4001-9f9b-a7366066bdb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/0_base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/11Decorators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/1_data_types.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/2Operators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/3Conditions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/4Loops.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/5Functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/6Exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/7FilesDirs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/8DateTime.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/9RegularExpressions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python-awesome/Бхаргава А. - Грокаем Алгоритмы (Библиотека программиста) - 2017.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/.idea/flask_web.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/database.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/scripts/create_env.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/scripts/start_flask.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/templates/get_html_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_frameworks/flask_web/templates/html_file.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DOCS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DOCS.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/DOCS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/DOCS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Почасовая fullstack-middle.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Почасовая fullstack-middle.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +77,7 @@
       <workItem from="1690904966594" duration="1528000" />
       <workItem from="1690988078385" duration="360000" />
       <workItem from="1690996651434" duration="151000" />
+      <workItem from="1692426771512" duration="2392000" />
     </task>
     <servers />
   </component>
