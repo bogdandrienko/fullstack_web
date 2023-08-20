@@ -6,7 +6,7 @@
     <option name="enabledOnSave" value="true" />
     <option name="executionMode" value="BINARY" />
     <option name="pathToExecutable" value="C:\environment\Python311\Scripts\black.exe" />
-    <option name="sdkUUID" value="52d55fc1-6e2b-4781-be02-9c03e1f9fe44" />
+    <option name="sdkUUID" value="32dca47f-359f-42c8-8a4e-2828da2993d1" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (flask_web)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (django_web)" project-jdk-type="Python SDK" />
 </project>

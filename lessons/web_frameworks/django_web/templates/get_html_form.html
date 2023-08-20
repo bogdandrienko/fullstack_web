@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML</title>
+</head>
+<body>
+<h1>HTML form</h1>
+
+
+<form method="POST" action="{% url "get_html_form" %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="text" placeholder="{{ result }}">
+    <input type="datetime-local" name="datetime">
+    <input type="file" accept="application/pdf" name="file">
+    <button type="submit">отправить</button>
+</form>
+
+</body>
+</html>
