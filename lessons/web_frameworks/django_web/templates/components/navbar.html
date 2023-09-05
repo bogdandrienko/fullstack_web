@@ -1,0 +1,84 @@
+<nav class="container card container-fluid navbar navbar-expand-lg navbar-light bg-body-tertiary">
+    <a class="navbar-brand" href="{% url "home" %}">Домашняя страница</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="navbar-nav navbar-collapse collapse" id="navbarSupportedContent">
+        <li class="dropend">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                Профиль
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <i class="btn btn-sm btn-dark bg-opacity-50 badge rounded-pill">аккаунт:
+                        {% if user.is_authenticated %}
+                            {{ user.username }}
+                        {% else %}
+                            аноним
+                        {% endif %}
+                    </i>
+                    <strong class="dropdown-header">Профили пользователей</strong>
+                    {% if user.is_authenticated %}
+                        <a class="dropdown-item text-danger" href="{% url 'logout' %}">
+                            <i class="fa-solid fa-list m-0 p-1"></i>
+                            выйти из аккаунта
+                        </a>
+                    {% else %}
+                        <a class="dropdown-item text-warning" href="#">
+                            <i class="fa-solid fa-circle-plus m-0 p-1"></i>
+                            регистрация новых пользователей
+                        </a>
+                        <a class="dropdown-item text-primary" href="{% url 'login' %}">
+                            <i class="fa-solid fa-list m-0 p-1"></i>
+                            войти в аккаунт
+                        </a>
+                    {% endif %}
+                </li>
+            </ul>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="dropend">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                Раздел посылок
+                <i class="btn btn-sm btn-dark bg-opacity-50 badge rounded-pill">в пути: {{ in_progress_item }}</i>
+
+                {% if complete_item > 0 %}
+                    <i class="btn btn-sm btn-danger bg-opacity-50 badge rounded-pill">ожидают: {{ complete_item }}</i>
+                {% else %}
+                    <i class="btn btn-sm btn-outline-danger text-dark bg-opacity-50 badge rounded-pill">ожидают: {{ complete_item }}</i>
+                {% endif %}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <strong class="dropdown-header">Раздел посылок</strong>
+
+                    <a class="dropdown-item" href="{% url "track_start" %}">
+                        <i class="fa-solid fa-play text-success m-0 p-1"></i>
+                        Запуск посылок
+                    </a>
+
+                    <a class="dropdown-item" href="{% url "track_middle" %}">
+                        <i class="fa-solid fa-arrow-up-wide-short text-warning m-0 p-1"></i>
+                        Сортировка посылок
+                    </a>
+
+                    <a class="dropdown-item" href="{% url "track_end" %}">
+                        <i class="fa-solid fa-flag-checkered text-danger m-0 p-1"></i>
+                        Приём посылок
+                    </a>
+
+                    <a class="dropdown-item" href="{% url "track_find" %}">
+                        <i class="fa-solid fa-magnifying-glass text-primary m-0 p-1"></i>
+                        Поиск посылки
+                    </a>
+
+                    <a class="dropdown-item" href="{% url "track_list" %}">
+                        <i class="fa-solid fa-briefcase text-dark m-0 p-1"></i>
+                        Мои посылки
+                    </a>
+                </li>
+            </ul>
+        </li>
+        {% endif %}
+    </ul>
+</nav>

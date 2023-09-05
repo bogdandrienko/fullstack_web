@@ -13,4 +13,17 @@ urlpatterns = [
     path("get_args/", views.get_args),
     path("get_html_form/", views.get_html_form, name="get_html_form"),
     # re_path(r"^users/(?P<pk>\d+)/detail/$", views.todo_f, name="todo_pk"),
+    # tracking
+    path("", views.home, name=""),
+    path("home/", views.home, name="home"),
+    path("login/", views.login_, name="login"),
+    path("logout/", views.logout_, name="logout"),
+    path("track/start/", views.track_start, name="track_start"),
+    path("track/middle/", views.login_, name="track_middle"),
+    path("track/end/", views.login_, name="track_end"),
+    path("track/find/", views.track_find, name="track_find"),
+    path("track/add/<str:track>/", views.track_add, name="track_add"),
+    path("track/remove/<str:track>/", views.login_, name="track_remove"),
+    path("track/list/", views.track_list, name="track_list"),
+    path("track/update/<str:track>/", views.track_update, name="track_update"),
 ]
