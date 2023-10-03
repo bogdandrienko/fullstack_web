@@ -1,0 +1,29 @@
+{% extends 'components/base.html' %}
+
+{% block title %}
+Наш Заголовок
+{% endblock title %}
+
+{% block main %}
+
+{% if error %}
+<div class="text-danger display-6">{{ error }}</div>
+{% endif %}
+
+{% if success %}
+<div class="text-success display-6">{{ success }}</div>
+{% endif %}
+
+<div class="container">
+    <form action="{% url 'register_mvt' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="lead">Введите Ваше имя:</div>
+        <input name="first_name" type="text" required value="" class="form-control">
+        <div class="lead">Введите Вашу дату рождения:</div>
+        <input name="date" type="date" class="form-control">
+        <button type="submit" class="btn btn-lg btn-outline-primary">Отравить</button>
+    </form>
+</div>
+<hr/>
+<div class="custom-color" onclick="sendAlarm()">register.html</div>
+{% endblock main %}
