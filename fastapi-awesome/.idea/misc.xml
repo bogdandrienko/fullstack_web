@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="cmdArguments" value="--line-length 150" />
+    <option name="enabledOnReformat" value="true" />
+    <option name="enabledOnSave" value="true" />
+    <option name="pathToExecutable" value="C:\environment\Python311\Scripts\black.exe" />
+    <option name="sdkName" value="Python 3.11 (backend_test)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (backend_test)" project-jdk-type="Python SDK" />
+</project>
