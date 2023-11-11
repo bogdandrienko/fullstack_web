@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-05T05:24:29.739Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="VAycakoyA8-bHY5Hjk1x" version="22.0.8" type="device">
+<mxfile host="app.diagrams.net" modified="2023-11-11T06:10:35.095Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="Yjsdei_fwifIR34cEwEU" version="22.1.0" type="device">
   <diagram name="Page-1" id="sdsImHb5m99pFpQp51NG">
-    <mxGraphModel dx="1430" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1728" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -64,10 +64,10 @@
         <mxCell id="0tLEOixdC0dCrLUX963W-21" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://images.ctfassets.net/dfcvkz6j859j/3yyuVQqgzMOMr2AGytPI4u/91be75a9b2d8debb8750270d0b3d52d4/Web-Analytics-Dashboard.png;" parent="1" vertex="1">
           <mxGeometry x="10" y="10" width="530" height="336.11" as="geometry" />
         </mxCell>
-        <mxCell id="v9862hDu5hUvn8m9qu2E-1" value="logs&lt;br&gt;ClickHouse" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+        <mxCell id="v9862hDu5hUvn8m9qu2E-1" value="logs&lt;br&gt;ClickHouse" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="560" y="600" width="70" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="v9862hDu5hUvn8m9qu2E-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="0tLEOixdC0dCrLUX963W-4" target="v9862hDu5hUvn8m9qu2E-1">
+        <mxCell id="v9862hDu5hUvn8m9qu2E-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="0tLEOixdC0dCrLUX963W-4" target="v9862hDu5hUvn8m9qu2E-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
