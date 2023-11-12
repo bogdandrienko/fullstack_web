@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useEffect } from "react";
+import * as actions from "../components/actions";
 
 export const loadWeb = "loadWeb";
 export const successWeb = "successWeb";
@@ -58,7 +59,7 @@ export default function Page() {
 
   return (
     <div>
-      <button onClick={getData}>getData</button>
+      <button onClick={actions.getData}>getData</button>
       <div className={"container container-fluid text-center"}>
         {simpleReduxWebPage.load === true && (
           <div className={"small fw-light"}>Идёт загрузка(Loader.tsx)</div>

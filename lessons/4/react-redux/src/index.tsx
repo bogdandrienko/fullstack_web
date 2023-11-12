@@ -12,10 +12,11 @@ import HomePage from "./pages/HomePage";
 import SimpleCounterPage from "./pages/SimpleCounterPage";
 import SimpleReduxCounterPage from "./pages/SimpleReduxCounterPage";
 import SimpleReduxWebPage from "./pages/SimpleReduxWebPage";
+import AnotherReduxPage from "./pages/AnotherReduxPage";
 
 // todos
-// import TodoList from "./pages/TodoList";
-// import TodoDetail from "./pages/TodoDetail";
+import TodoListReduxPage from "./pages/TodoListReduxPage";
+import TodoDetailReduxPage from "./pages/TodoDetailReduxPage";
 
 createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
@@ -28,10 +29,11 @@ createRoot(document.getElementById("root")!).render(
           element={<SimpleReduxCounterPage />}
         ></Route>
         <Route path="/web_redux" element={<SimpleReduxWebPage />}></Route>
+        <Route path="/another_redux" element={<AnotherReduxPage />}></Route>
 
         {/*todos*/}
-        {/*<Route path="/todos" element={<TodoList />}></Route>*/}
-        {/*<Route path="/todos/:id" element={<TodoDetail />}></Route>*/}
+        <Route path="/todos" element={<TodoListReduxPage />}></Route>
+        <Route path="/todos/:id" element={<TodoDetailReduxPage />}></Route>
       </Routes>
     </BrowserRouter>
   </Provider>
