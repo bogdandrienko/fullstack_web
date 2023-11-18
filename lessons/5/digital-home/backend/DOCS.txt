@@ -1,9 +1,0 @@
-
-/api/communicator POST
-
--> JSON
-- api: swagger(автодокументация). GET - response, query_param. POST - response, body.
-- автотесты
-- докер (виртуализация vs контейнеризация)
-
-пульсометр на WinCE, мигать экраном на фронтенд если пульс человека стал ниже нормы
