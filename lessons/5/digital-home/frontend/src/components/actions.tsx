@@ -24,6 +24,72 @@ export async function getMessageList(dispatch: any, queryParams: string) {
   }
 }
 
+export async function getNowMessageList(dispatch: any, queryParams: string) {
+  try {
+    dispatch({ type: constants.nowMessageList.load });
+    const config = { Authorization: "Token=token_auth123" };
+    const response = await axios.get(
+      `http://127.0.0.1:8000/api/communicator${queryParams}`,
+      // @ts-ignore
+      config,
+    );
+    if (response.data) {
+      dispatch({
+        type: constants.nowMessageList.success,
+        payload: response.data,
+      });
+    } else {
+      dispatch({
+        type: constants.nowMessageList.error,
+        payload: response.statusText,
+      });
+    }
+  } catch (error: any) {
+    dispatch({
+      type: constants.nowMessageList.fail,
+      payload: error.toString(),
+    });
+    console.error("error: ", error);
+  }
+}
+
+export function constructorAction(
+  constant: any,
+  dispatch: any,
+  url: string,
+  queryParams: string,
+  auth: string = "Token=token_auth123",
+) {
+  return async function func() {
+    try {
+      dispatch({ type: constant.load });
+      const config = { Authorization: auth };
+      const response = await axios.get(
+        `${url}${queryParams}`,
+        // @ts-ignore
+        config,
+      );
+      if (response.data) {
+        dispatch({
+          type: constant.success,
+          payload: response.data,
+        });
+      } else {
+        dispatch({
+          type: constant.error,
+          payload: response.statusText,
+        });
+      }
+    } catch (error: any) {
+      dispatch({
+        type: constant.fail,
+        payload: error.toString(),
+      });
+      console.error("error: ", error);
+    }
+  };
+}
+
 //
 // export function getAllTodos() {
 //   return constructorAction({

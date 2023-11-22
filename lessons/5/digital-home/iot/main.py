@@ -14,8 +14,7 @@ while True:
         # получить/конвертировать данные
         data = {
             "id": random.randint(1, 1000),
-            "param1": random.randint(70, 200),
-            "param2": random.randint(120, 260),
+            "param1": random.randint(0, 70),
             "datetime_iot": str(dt),
         }
 
@@ -28,7 +27,7 @@ while True:
         # отправить данные
         response = requests.post(  # TCP/IP HTTP request POST
             url="http://127.0.0.1:8000/api/communicator/",
-            json={"subsystem": "пульсометр", "datetime_subsystem": str(dt), "messages": data},
+            json={"subsystem": "водонагреватель", "datetime_subsystem": str(dt), "messages": data},
             headers=headers,
             timeout=5.0,
         )

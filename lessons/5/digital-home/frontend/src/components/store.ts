@@ -9,6 +9,7 @@ import * as constants from "../components/constants";
 export const reducer = combineReducers({
   messageListStore: reducers.constructorReducer(constants.messageList),
   // messageDetailStore: reducers.constructorReducer(constants.messageDetail),
+  nowMessageListStore: reducers.constructorReducer(constants.nowMessageList),
 });
 
 const preloadedState = {

@@ -12,3 +12,4 @@ function constructorConstant(name: string) {
 
 export const messageList = constructorConstant("messageList");
 // export const messageDetail = constructorConstant("messageDetail");
+export const nowMessageList = constructorConstant("nowMessageList");

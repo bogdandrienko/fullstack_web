@@ -76,10 +76,14 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
+    # redis
+    # aioredis
+
     # безопасное создание базы данных и таблицы
     with contextlib.closing(sqlite3.connect("message.db")) as connection:  # sqlite3.connect(":memory:"))
         with connection as cursor:
-            # TODO - последние 10
+            # TODO - последние для каждой подсистемы
+            # для дашборда последних показателей(0.5)
             query = """
 CREATE TABLE IF NOT EXISTS message (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -96,6 +100,7 @@ CREATE TABLE IF NOT EXISTS message (
     with contextlib.closing(sqlite3.connect("message.db")) as connection:  # sqlite3.connect(":memory:"))
         with connection as cursor:
             # TODO - все исторические
+            # для графиков
             query = """
 CREATE TABLE IF NOT EXISTS message_history (
 id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -138,24 +143,41 @@ async def get_api_communicator(request: Request):
     # page = query_params["page"]
     # page = query_params.get("page", 1)
     datetime_server = datetime.datetime.now()
+
     # fake
-    messages = []
-    for i in range(0, 100):
-        messages.append({"id": i, "param1": 139 + i, "param2": 169 - i, "datetime_iot": "2023-11-18 11:43:15.824762"})
+    # messages = []
+    # for i in range(0, 100):
+    #     messages.append({"id": i, "param1": 139 + i, "param2": 169 - i, "datetime_iot": "2023-11-18 11:43:15.824762"})
 
-    #     async with aiosqlite.connect("message.db") as connection:
-    #         query = """
-    # SELECT id, subsystem, message, datetime_subsystem, datetime_server
-    # FROM message
-    # ORDER BY subsystem ASC
-    # LIMIT ?;
-    # """
-    #         async with connection.execute(query, (10,)) as cursor:
-    #             rows = await cursor.fetchall()
-    #             messages =  [{"id": row[0], "subsystem": row[1], "message": json.loads(row[2], ensure_ascii=False), "datetime": row[2]} for row in rows]
+    def get_by_name(name: str) -> str:
+        match name.lower():
+            case "пульсометр":
+                return "pulse"
+            case "водонагреватель":
+                return "voda"
+            case _:
+                return "unknown"
 
+    async with aiosqlite.connect("message.db") as connection:
+        query = """
+SELECT subsystem, message, datetime_subsystem, datetime_server
+FROM message
+ORDER BY subsystem ASC
+"""
+        async with connection.execute(query) as cursor:
+            rows = await cursor.fetchall()
+            messages = [{"subsystem": row[0], "message": json.loads(row[1]), "datetime_subsystem": row[2], "datetime_server": row[3]} for row in rows]
+            print("\n\n\n")
+            print(messages)
+            data = {}
+            for message in messages:
+                sub = message["subsystem"]
+                subname = get_by_name(sub)
+                data[subname] = message
+            print(data)
+            print("\n\n\n")
     return {
-        "data": messages,
+        "data": data,
         "datetime_server": datetime_server,
     }
 
@@ -192,3 +214,23 @@ VALUES (?, ?, ?, ?)
         await connection.commit()
 
     return {"message": "ok"}
+
+
+"""
+
+[
+{'subsystem': 'водонагреватель', 'message': 
+    {'id': 783, 'param1': 54, 'datetime_iot': '2023-11-22 20:24:20.018885'}, 'datetime_subsystem': '2023-11-22 20:24:20.018885', 'datetime_server': '2023-11-22 20:24:21.017175'}, 
+
+{'subsystem': 'пульсометр', 'message':
+    {'id': 723, 'param1': 161, 'param2': 232, 'datetime_iot': '2023-11-22 20:24:20.060918'}, 'datetime_subsystem': '2023-11-22 20:24:20.060918', 'datetime_server': '2023-11-22 20:24:21.065217'}
+]
+
+{
+'voda': 
+    {'subsystem': 'водонагреватель', 'message': {'id': 783, 'param1': 54, 'datetime_iot': '2023-11-22 20:24:20.018885'}, 'datetime_subsystem': '2023-11-22 20:24:20.018885', 'datetime_server': '2023-11-22 20:24:21.017175'}, 
+'pulse': 
+    {'subsystem': 'пульсометр', 'message': {'id': 723, 'param1': 161, 'param2': 232, 'datetime_iot': '2023-11-22 20:24:20.060918'}, 'datetime_subsystem': '2023-11-22 20:24:20.060918', 'datetime_server': '2023-11-22 20:24:21.065217'}
+}
+
+"""
