@@ -5,11 +5,16 @@ import thunk from "redux-thunk";
 //
 import * as reducers from "../components/reducers";
 import * as constants from "../components/constants";
+import { constantUserRegister } from "../components/constants";
 
 export const reducer = combineReducers({
   messageListStore: reducers.constructorReducer(constants.messageList),
   // messageDetailStore: reducers.constructorReducer(constants.messageDetail),
   nowMessageListStore: reducers.constructorReducer(constants.nowMessageList),
+  // userLoginStore: reducers.constructorReducer(constants.nowMessageList),
+  storeUserRegister: reducers.constructorReducer(
+    constants.constantUserRegister,
+  ),
 });
 
 const preloadedState = {

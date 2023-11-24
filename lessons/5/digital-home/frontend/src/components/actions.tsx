@@ -85,9 +85,42 @@ export function constructorAction(
         type: constant.fail,
         payload: error.toString(),
       });
-      console.error("error: ", error);
+      if (constants.DEBUG) {
+        console.error("error: ", error);
+      }
     }
   };
+}
+
+export async function constructorPostAction(
+  dispatch: any,
+  constant: any,
+  form: any,
+  url: string,
+) {
+  try {
+    dispatch({ type: constant.load });
+    const response = await axios.post(url, { ...form });
+    if (response.data) {
+      dispatch({
+        type: constant.success,
+        payload: response.data,
+      });
+    } else {
+      dispatch({
+        type: constant.error,
+        payload: response.statusText,
+      });
+    }
+  } catch (error: any) {
+    dispatch({
+      type: constant.fail,
+      payload: error.toString(),
+    });
+    if (constants.DEBUG) {
+      console.error("error: ", error);
+    }
+  }
 }
 
 //

@@ -4,9 +4,15 @@ import { useEffect, useState } from "react";
 import * as base from "../components/ui/base";
 import * as actions from "../components/actions";
 import * as constants from "../components/constants";
+import { Link } from "react-router-dom";
 
 export default function Page() {
   const dispatch = useDispatch();
+  //
+  const storeUserRegister = useSelector(
+    (state: any) => state.storeUserRegister,
+  );
+  //
   const nowMessageListStore = useSelector(
     (state: any) => state.nowMessageListStore,
   );
@@ -61,10 +67,28 @@ export default function Page() {
     }
   }
 
+  useEffect(() => {
+    if (
+      storeUserRegister &&
+      storeUserRegister.data &&
+      storeUserRegister.data.data
+    ) {
+      setTimeout(() => {
+        dispatch({ type: constants.constantUserRegister.reset });
+      }, 2000);
+    }
+  }, [storeUserRegister]);
+
   // @ts-ignore
   return (
     <base.Base1 title={"Домашняя страница"}>
+      {storeUserRegister.data &&
+        storeUserRegister.data.data &&
+        storeUserRegister.data.data}
+      <hr />
       Index
+      <Link to={"/register"}>Register</Link>
+      <a href={"/register"}>NOT REACT</a>
       <button
         onClick={() => {
           getData();

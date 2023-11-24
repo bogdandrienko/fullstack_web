@@ -1,6 +1,7 @@
 import contextlib
 import datetime
 import json
+import random
 import sqlite3
 
 #
@@ -13,7 +14,9 @@ import asyncio
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from starlette.requests import Request
+from starlette.responses import HTMLResponse
 from starlette.staticfiles import StaticFiles
+from starlette.templating import Jinja2Templates
 
 app = FastAPI(
     title="ChimichangApp",
@@ -46,7 +49,7 @@ You will be able to:
 )
 app.mount(
     "/static",
-    StaticFiles(directory="static"),
+    StaticFiles(directory="build/static"),
     name="static",
 )
 # app.mount(
@@ -129,6 +132,48 @@ async def index():
 @app.get("/api")
 async def read_root():
     return {"message": "ok"}
+
+
+@app.get("/api/pagination/")
+async def get_api_pagination(request: Request):
+    if request.client.host != "127.0.0.1":
+        if request.headers.get("Authorization", "") != "Token=token_auth123":
+            raise Exception("Access denied")
+
+    await asyncio.sleep(1.0)
+
+    query_params = request.query_params
+    # page = query_params["page"]  # required
+    page = int(query_params.get("page", 1)) - 1  # default
+    limit = int(query_params.get("limit", 10))
+    # fake
+    # костыль
+    if page == -2:
+        messages = []
+        for i in range(1, 1000):
+            messages.append(
+                {
+                    "id": i,
+                    "param1": 139 + i,
+                    "param2": 169 - i,
+                    "name": random.choice(["Первый", "Второй", "Третий"]),
+                    "datetime_iot": "2023-11-18 11:43:15.824762",
+                }
+            )
+    else:
+        messages = []
+        for i in range(limit * page + 1, (limit * page) + 11):
+            messages.append(
+                {
+                    "id": i,
+                    "param1": 139 + i,
+                    "param2": 169 - i,
+                    "name": random.choice(["Первый", "Второй", "Третий"]),
+                    "datetime_iot": "2023-11-18 11:43:15.824762",
+                }
+            )
+
+    return {"data": messages, "x_total_count": 100}
 
 
 @app.get("/api/communicator/")
@@ -234,3 +279,22 @@ VALUES (?, ?, ?, ?)
 }
 
 """
+
+
+@app.post("/api/register/")
+async def post_api_register(request: Request):
+    await asyncio.sleep(1.0)
+
+    form_data = await request.json()
+    print("\n\nform_data: ", form_data)
+
+    return {"data": "Пользователь зарегистрирован!"}
+
+
+templates = Jinja2Templates(directory="build")
+
+
+@app.get("/react", response_class=HTMLResponse)
+async def react(request: Request):
+    headers = {"Cache-Control": "max-age=0"}
+    return templates.TemplateResponse("index.html", {"request": request}, headers=headers)

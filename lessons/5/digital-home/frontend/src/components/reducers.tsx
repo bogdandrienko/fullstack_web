@@ -1,5 +1,6 @@
 export function constructorReducer({ load, success, fail, error, reset }: any) {
   return function (state = {}, action: { type: string; payload: any }) {
+    // dispatch(action: { type: string; payload: any })
     switch (action.type) {
       case load:
         return { load: true };

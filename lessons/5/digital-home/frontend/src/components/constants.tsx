@@ -1,4 +1,4 @@
-export const DEBUG = true;
+export const DEBUG = true; // if host is 127.0.0.1:3000
 
 function constructorConstant(name: string) {
   return {
@@ -13,3 +13,4 @@ function constructorConstant(name: string) {
 export const messageList = constructorConstant("messageList");
 // export const messageDetail = constructorConstant("messageDetail");
 export const nowMessageList = constructorConstant("nowMessageList");
+export const constantUserRegister = constructorConstant("constantUserRegister");
