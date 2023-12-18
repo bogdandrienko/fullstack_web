@@ -16,3 +16,10 @@ FULLSTACK:
 = fastapi авторизация и jwt токены
 
 + golang + backend api Go
+
+- Вопросы
+- Регулярные выражения
+- Обработка медиа(upload)
+- Обработка статики(download)
+- Работа с датой и временем
+- Кастомные хуки(useStateCustom1, )
