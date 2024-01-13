@@ -1,36 +1,20 @@
 FULLSTACK:
 
++ введение про необходимость развиваться (react->next, vue->nest, php->python->go)
 + показать ещё раз сравнение производительности веб фреймворков, как их всех поднимать и таблицу сравнения
 + сделать на frontend навбар для перемещения между страницами
 + показать реализацию кастомного кэша через python словарь
 + сделать оповещения в телеграм бота
-+ развернуть на pythonanywhere
+
++ развернуть на oblako.kz
+
 + fastapi orm
 + fastapi testing
 + fastapi cache
 + fastapi websocket
-+ развернуть на oblako.kz, затем развернуть на хостинге ps.kz с доменом (взять с Даната эту сумму)
-
-= fastapi docker
-= fastapi celery
-= fastapi авторизация и jwt токены
-
-+ golang + backend api Go
-
-
-
-
-
-
-- Вопросы
-- Маршрутизация
-- Регулярные выражения
-- Обработка медиа(upload)
-- Обработка статики(download)
-- Работа с датой и временем
-- Кастомные хуки(useStateCustom1, )
-- Публикация
-
++ fastapi docker
++ fastapi celery
++ golang + gin
 
 
 

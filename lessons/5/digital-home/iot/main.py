@@ -14,20 +14,22 @@ while True:
         # получить/конвертировать данные
         data = {
             "id": random.randint(1, 1000),
-            "param1": random.randint(0, 70),
+            "param1": random.randint(70, 150),
+            "param2": random.randint(80, 120),
             "datetime_iot": str(dt),
         }
 
         # заголовки
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (HTML, like Gecko) Chrome/102.0.0.0 Safari/537.36",
-            "Authorization": "Token=token_auth123",
+            "Authorization": "Token=token_auth",
         }
 
         # отправить данные
         response = requests.post(  # TCP/IP HTTP request POST
-            url="http://127.0.0.1:8000/api/communicator/",
-            json={"subsystem": "водонагреватель", "datetime_subsystem": str(dt), "messages": data},
+            # url="http://127.0.0.1:8000/api/communicator/",
+            url="http://188.94.156.66:80/api/communicator/",
+            json={"subsystem": "пульсометр", "datetime_subsystem": str(dt), "messages": data},
             headers=headers,
             timeout=5.0,
         )

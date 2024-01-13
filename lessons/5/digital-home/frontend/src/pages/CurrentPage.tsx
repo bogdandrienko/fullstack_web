@@ -229,7 +229,7 @@ export async function getMessageList(dispatch: any, queryParams: string) {
     dispatch({ type: constants.messageList.load });
     const config = { Authorization: "Token=token_auth123" };
     const response = await axios.get(
-      `http://127.0.0.1:8000/api/communicator${queryParams}`,
+      `/api/communicator${queryParams}`,
       // @ts-ignore
       config,
     );

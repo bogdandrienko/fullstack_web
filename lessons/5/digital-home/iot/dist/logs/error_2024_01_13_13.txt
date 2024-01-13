@@ -1,0 +1,121 @@
+2024-01-13 13:02:15.176353 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E6654D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:15.187373 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D585710>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:20.220693 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E671950>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:20.240711 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D591A10>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:25.262293 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E667E90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:25.277873 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D585890>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:30.306067 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E671910>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:30.323081 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D591F50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:35.349894 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E673D50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:35.363905 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D593E10>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:40.398466 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E682190>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:40.414481 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5A6250>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:45.433083 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E6945D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:45.465111 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5B8690>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:50.476683 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E683290>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:50.508707 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5A7810>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:55.509893 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E6825D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:02:55.541921 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5A6750>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:00.552204 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E680190>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:00.583230 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5A4150>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:05.591949 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E670950>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:05.624482 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D593910>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:10.618257 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E667190>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:10.665333 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D584F10>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:15.667467 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E6969D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:15.715509 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5B8190>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:20.709904 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E655F10>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:20.756896 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52C5B6490>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:25.760548 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E664E10>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:25.807621 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D586090>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:30.811776 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E671110>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:30.841890 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D591010>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:35.843477 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E672490>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:35.874499 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D592590>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:40.880673 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E696010>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:40.907697 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5BA5D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:45.926176 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E681C10>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:45.958201 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5A6050>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:50.959864 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E6A8DD0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:50.990890 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5C8E90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:56.015875 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E6811D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:03:56.044879 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D5A4450>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:04:01.062251 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E6669D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:04:01.092278 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D587910>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:04:06.115611 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001920E672B90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:04:06.147639 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/communicator/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C52D593E50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-01-13 13:04:16.729655 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:04:17.233787 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:21.181985 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:21.820501 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:29.217138 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:29.837970 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:37.232971 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:37.855828 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:45.240823 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:45.863904 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:53.252529 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:05:53.873678 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:06:01.267852 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:06:01.886395 HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=5.0)
+2024-01-13 13:06:09.903074 500
+2024-01-13 13:06:15.613765 500
+2024-01-13 13:06:19.641349 500
+2024-01-13 13:06:23.655159 500
+2024-01-13 13:06:27.658765 500
+2024-01-13 13:06:31.659815 500
+2024-01-13 13:06:35.677346 500
+2024-01-13 13:06:39.685810 500
+2024-01-13 13:06:43.717930 500
+2024-01-13 13:06:47.732869 500
+2024-01-13 13:06:51.747828 500
+2024-01-13 13:06:55.769543 500
+2024-01-13 13:06:59.789824 500
+2024-01-13 13:07:03.793847 500
+2024-01-13 13:07:07.811146 500
+2024-01-13 13:07:11.825231 500
+2024-01-13 13:07:15.824749 500
+2024-01-13 13:07:19.846489 500
+2024-01-13 13:07:23.862310 500
+2024-01-13 13:07:27.885435 500
+2024-01-13 13:07:31.884329 500
+2024-01-13 13:07:36.408309 500
+2024-01-13 13:07:40.418214 500
+2024-01-13 13:07:44.447582 500
+2024-01-13 13:07:48.461385 500
+2024-01-13 13:07:52.467864 500
+2024-01-13 13:07:56.491250 500
+2024-01-13 13:08:00.504857 500
+2024-01-13 13:08:04.522800 500
+2024-01-13 13:08:08.539182 500
+2024-01-13 13:08:12.555793 500
+2024-01-13 13:08:20.630165 500
+2024-01-13 13:08:24.638593 500
+2024-01-13 13:08:28.657132 500
+2024-01-13 13:08:32.676851 500
+2024-01-13 13:08:36.690143 500
+2024-01-13 13:08:40.715807 500
+2024-01-13 13:08:44.735246 500
+2024-01-13 13:08:48.749821 500
+2024-01-13 13:08:52.770294 500
+2024-01-13 13:08:56.785906 500
+2024-01-13 13:09:00.806342 500
+2024-01-13 13:09:04.847833 500
+2024-01-13 13:09:08.865733 500
+2024-01-13 13:09:12.891957 500
+2024-01-13 13:09:16.908449 500
+2024-01-13 13:09:20.943059 500
+2024-01-13 13:09:24.953767 500
+2024-01-13 13:09:28.992437 500
+2024-01-13 13:09:33.007465 500
+2024-01-13 13:09:37.007689 500
+2024-01-13 13:09:41.024585 500
+2024-01-13 13:09:45.044829 500
+2024-01-13 13:09:49.106502 500
+2024-01-13 13:09:53.140586 500
+2024-01-13 13:10:05.281227 500
+2024-01-13 13:10:09.285793 500
+2024-01-13 13:10:13.298152 500
+2024-01-13 13:10:17.323943 500
+2024-01-13 13:10:29.406121 500
+2024-01-13 13:10:37.481671 500

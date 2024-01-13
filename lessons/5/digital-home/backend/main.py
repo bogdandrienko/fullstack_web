@@ -5,9 +5,8 @@ import random
 import sqlite3
 
 #
+import requests
 import aiosqlite
-import aiofiles
-import aiohttp
 import asyncio
 
 #
@@ -17,7 +16,9 @@ from starlette.requests import Request
 from starlette.responses import HTMLResponse
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
+import utils
 
+cache = utils.CacheServer()
 app = FastAPI(
     title="ChimichangApp",
     description="""
@@ -83,38 +84,39 @@ async def startup_event():
     # aioredis
 
     # безопасное создание базы данных и таблицы
-    with contextlib.closing(sqlite3.connect("message.db")) as connection:  # sqlite3.connect(":memory:"))
-        with connection as cursor:
-            # TODO - последние для каждой подсистемы
-            # для дашборда последних показателей(0.5)
-            query = """
+    connection = sqlite3.connect("message.db")  # sqlite3.connect(":memory:"))
+    cursor = connection.cursor()
+    # TODO - последние для каждой подсистемы
+    # для дашборда последних показателей(0.5)
+    query = """
 CREATE TABLE IF NOT EXISTS message (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    subsystem TEXT UNIQUE NOT NULL,
-    message TEXT NOT NULL,
-    datetime_subsystem TEXT NOT NULL,
-    datetime_server TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-"""
-            cursor.execute(query)
-            cursor.commit()
-
-    # безопасное создание базы данных и таблицы
-    with contextlib.closing(sqlite3.connect("message.db")) as connection:  # sqlite3.connect(":memory:"))
-        with connection as cursor:
-            # TODO - все исторические
-            # для графиков
-            query = """
-CREATE TABLE IF NOT EXISTS message_history (
 id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-subsystem TEXT NOT NULL,
+subsystem TEXT UNIQUE NOT NULL,
 message TEXT NOT NULL,
 datetime_subsystem TEXT NOT NULL,
 datetime_server TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 """
-            cursor.execute(query)
-            cursor.commit()
+    cursor.execute(query)
+    connection.commit()
+    connection.close()
+
+    # безопасное создание базы данных и таблицы
+#     with contextlib.closing(sqlite3.connect("message.db")) as connection:  # sqlite3.connect(":memory:"))
+#         cursor = connection.cursor()
+#         # TODO - все исторические
+#         # для графиков
+#         query = """
+# CREATE TABLE IF NOT EXISTS message_history (
+# id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+# subsystem TEXT NOT NULL,
+# message TEXT NOT NULL,
+# datetime_subsystem TEXT NOT NULL,
+# datetime_server TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+# );
+# """
+#         cursor.execute(query)
+#         connection.commit()
 
     print(f"\n.....server at {datetime.datetime.now()} started.....\n\n\n")
 
@@ -124,9 +126,10 @@ def shutdown_event():
     print(f"\n\n\n.....server at {datetime.datetime.now()} stopped.....\n")
 
 
-@app.get("/")
-async def index():
-    return "OK"
+@app.get("/", response_class=HTMLResponse)
+async def index(request: Request):
+    headers = {"Cache-Control": "max-age=0"}
+    return templates.TemplateResponse("index.html", {"request": request}, headers=headers)
 
 
 @app.get("/api")
@@ -136,9 +139,9 @@ async def read_root():
 
 @app.get("/api/pagination/")
 async def get_api_pagination(request: Request):
-    if request.client.host != "127.0.0.1":
-        if request.headers.get("Authorization", "") != "Token=token_auth123":
-            raise Exception("Access denied")
+    # if request.client.host != "127.0.0.1":
+    #     if request.headers.get("Authorization", "") != "Token=token_auth123":
+    #         raise Exception("Access denied")
 
     await asyncio.sleep(1.0)
 
@@ -178,9 +181,9 @@ async def get_api_pagination(request: Request):
 
 @app.get("/api/communicator/")
 async def get_api_communicator(request: Request):
-    if request.client.host != "127.0.0.1":
-        if request.headers.get("Authorization", "") != "Token=token_auth123":
-            raise Exception("Access denied")
+    # if request.client.host != "127.0.0.1":
+    #     if request.headers.get("Authorization", "") != "Token=token_auth123":
+    #         raise Exception("Access denied")
 
     await asyncio.sleep(1.0)
 
@@ -203,24 +206,43 @@ async def get_api_communicator(request: Request):
             case _:
                 return "unknown"
 
-    async with aiosqlite.connect("message.db") as connection:
-        query = """
-SELECT subsystem, message, datetime_subsystem, datetime_server
-FROM message
-ORDER BY subsystem ASC
-"""
-        async with connection.execute(query) as cursor:
-            rows = await cursor.fetchall()
-            messages = [{"subsystem": row[0], "message": json.loads(row[1]), "datetime_subsystem": row[2], "datetime_server": row[3]} for row in rows]
-            print("\n\n\n")
-            print(messages)
-            data = {}
-            for message in messages:
-                sub = message["subsystem"]
-                subname = get_by_name(sub)
-                data[subname] = message
-            print(data)
-            print("\n\n\n")
+    connection = sqlite3.connect("message.db")  # sqlite3.connect(":memory:"))
+    cursor = connection.cursor()
+    query = """
+    SELECT subsystem, message, datetime_subsystem, datetime_server
+    FROM message
+    ORDER BY subsystem ASC
+    """
+    cursor.execute(query)
+    rows = cursor.fetchall()
+    connection.close()
+    messages = [{"subsystem": row[0], "message": json.loads(row[1]), "datetime_subsystem": row[2], "datetime_server": row[3]} for row in rows]
+    # print("\n\n\n")
+    # print(messages)
+    data = {}
+    for message in messages:
+        sub = message["subsystem"]
+        subname = get_by_name(sub)
+        data[subname] = message
+
+#     async with aiosqlite.connect("message.db") as connection:
+#         query = """
+# SELECT subsystem, message, datetime_subsystem, datetime_server
+# FROM message
+# ORDER BY subsystem ASC
+# """
+#         async with connection.execute(query) as cursor:
+#             rows = await cursor.fetchall()
+#             messages = [{"subsystem": row[0], "message": json.loads(row[1]), "datetime_subsystem": row[2], "datetime_server": row[3]} for row in rows]
+#             print("\n\n\n")
+#             print(messages)
+#             data = {}
+#             for message in messages:
+#                 sub = message["subsystem"]
+#                 subname = get_by_name(sub)
+#                 data[subname] = message
+#             print(data)
+#             print("\n\n\n")
     return {
         "data": data,
         "datetime_server": datetime_server,
@@ -229,34 +251,64 @@ ORDER BY subsystem ASC
 
 @app.post("/api/communicator/")
 async def post_api_communicator(request: Request):
-    if request.client.host != "127.0.0.1":
-        if request.headers.get("Authorization", "") != "Token=token_auth123":
-            raise Exception("Access denied")
+    # if request.client.host != "127.0.0.1":
+    #     if request.headers.get("Authorization", "") != "Token=token_auth123":
+    #         raise Exception("Access denied")
 
     await asyncio.sleep(1.0)
 
     form_data = await request.json()
-    print(form_data)
     subsystem = form_data["subsystem"]
     datetime_subsystem = form_data["datetime_subsystem"]
     datetime_server = datetime.datetime.now()
     messages = form_data.get("messages", {})
 
-    async with aiosqlite.connect("message.db") as connection:
-        # обновление последней(единственной) строки
-        query1 = """
+    # print("messages: ", messages)
+    if messages.get("param1", 0) > 80:
+        text = f"Превышение показателя: {messages.get('param1', 0)}"
+        bot_token = "6870605175:AAElZSI9Vm8LgAaP58NHlaFwuy5MFVPqnMs"
+        user_list = "1289279426"
+        for usr in [x.strip() for x in user_list.split(",")]:
+            try:
+                response = requests.post(url=f"https://api.telegram.org/bot{bot_token}/sendMessage", json={"chat_id": usr, "text": text})
+                if response.status_code not in (200, 201):
+                    raise Exception(response.status_code)
+            except Exception as error:
+                print(error)
+                await asyncio.sleep(1.0)
+                response = requests.post(url=f"https://api.telegram.org/bot{bot_token}/sendMessage", json={"chat_id": usr, "text": text})
+                if response.status_code not in (200, 201):
+                    raise Exception(response.status_code)
+
+    """
+    {'id': 719, 'param1': 62, 'datetime_iot': '2024-01-13 13:04:11.178150'}
+    """
+
+    connection = sqlite3.connect("message.db")  # sqlite3.connect(":memory:"))
+    cursor = connection.cursor()
+    query1 = """
 INSERT OR REPLACE INTO message (subsystem, message, datetime_subsystem, datetime_server) 
 VALUES (?, ?, ?, ?)
 """
-        await connection.execute(query1, (subsystem, json.dumps(messages, ensure_ascii=False), datetime_subsystem, datetime_server))
+    cursor.execute(query1, (subsystem, json.dumps(messages, ensure_ascii=False), datetime_subsystem, datetime_server))
+    connection.commit()
+    connection.close()
+
+#     async with aiosqlite.connect("message.db") as connection:
+#         # обновление последней(единственной) строки
+#         query1 = """
+# INSERT OR REPLACE INTO message (subsystem, message, datetime_subsystem, datetime_server)
+# VALUES (?, ?, ?, ?)
+# """
+#         await connection.execute(query1, (subsystem, json.dumps(messages, ensure_ascii=False), datetime_subsystem, datetime_server))
 
         # вставка строки
-        query2 = """
-INSERT INTO message_history (subsystem, message, datetime_subsystem, datetime_server) 
-VALUES (?, ?, ?, ?)
-"""
-        await connection.execute(query2, (subsystem, json.dumps(messages, ensure_ascii=False), datetime_subsystem, datetime_server))
-        await connection.commit()
+#         query2 = """
+# INSERT INTO message_history (subsystem, message, datetime_subsystem, datetime_server)
+# VALUES (?, ?, ?, ?)
+# """
+#         await connection.execute(query2, (subsystem, json.dumps(messages, ensure_ascii=False), datetime_subsystem, datetime_server))
+#         await connection.commit()
 
     return {"message": "ok"}
 
@@ -286,7 +338,6 @@ async def post_api_register(request: Request):
     await asyncio.sleep(1.0)
 
     form_data = await request.json()
-    print("\n\nform_data: ", form_data)
 
     return {"data": "Пользователь зарегистрирован!"}
 
@@ -298,3 +349,15 @@ templates = Jinja2Templates(directory="build")
 async def react(request: Request):
     headers = {"Cache-Control": "max-age=0"}
     return templates.TemplateResponse("index.html", {"request": request}, headers=headers)
+
+
+@app.get("/api/cache/")
+async def api_cache(request: Request):
+    await asyncio.sleep(1.0)
+
+    def get_data():
+        return random.randint(1, 10000000)
+
+    val = cache.get(request=request, query=lambda: get_data, timeout=10)
+
+    return {"data": val}

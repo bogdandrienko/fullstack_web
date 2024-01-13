@@ -13,7 +13,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<IndexPage />}></Route>
+        <Route path="/" element={<CurrentPage />}></Route>
         <Route path="/design" element={<DesignPage />}></Route>
         <Route path="/design2" element={<Taiwind />}></Route>
         <Route path="/chart" element={<ChartPage />}></Route>
